@@ -314,7 +314,7 @@ body {
         font-size: 4rem; }
       .card__btn {
         background-color: #fff;
-        margin-top: 8rem; } }
+        margin-top: 3rem; } }
 
 .composition {
   position: relative; }
@@ -480,11 +480,15 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s; }
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    .popup {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.3); } }
   .popup__content {
     position: absolute;
     top: 50%;
@@ -600,12 +604,15 @@ body {
 
 .header {
   height: 100vh;
-  background-image: linear-gradient(rgba(94, 223, 186, 0.6), rgba(3, 27, 20, 0.6)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(94, 223, 186, 0.6), rgba(3, 27, 20, 0.6)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative; }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(94, 223, 186, 0.6), rgba(3, 27, 20, 0.6)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
     .header {
       clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
