@@ -10,10 +10,9 @@ body {
    color: $color-white;
    text-transform: uppercase;
    font-weight: 700;
+   -webkit-backface-visibility: hidden;
    backface-visibility: hidden;
    margin-bottom: 6rem;
-
-
 
    &--main {
       display: block;
@@ -44,8 +43,11 @@ body {
    text-transform: uppercase;
    font-weight: 700;
    display: inline-block;
-   background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+   background-image: linear-gradient(to right,
+         $color-primary-light,
+         $color-primary-dark);
    -webkit-background-clip: text;
+   background-clip: text;
    color: transparent;
    letter-spacing: 0.2rem;
    transition: all 0.3s;
